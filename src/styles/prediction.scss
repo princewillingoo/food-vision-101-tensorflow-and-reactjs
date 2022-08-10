@@ -1,0 +1,108 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    font-family: 'Sofia';
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background:#3B5998;
+    font-size: 27px;
+    padding: 5px 300px;
+    bottom: 25%;
+    position: absolute;
+}
+
+.mainWrapper {
+    padding: 0 10px;
+}
+
+.mainContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+}
+
+.imageHolder {
+    animation: fadein 2s;
+    padding-right: 30%;
+    position:absolute;
+    left: 15%;
+    top: 20%;
+  }
+
+.resultsHolder {
+    padding: 30px;
+    position: fixed;
+    right: 5%;
+    bottom: 30%;
+
+    @media (max-width: 800px) {
+        width: 100%;
+        padding: 0;
+    }
+
+    .result {
+        border: 1px solid red;
+        margin: 0 0 10px;
+        padding: 10px;
+        background-color:white;
+
+        &:first-of-type {
+            border-color:white;
+            background-color: red;
+            border: 10%;
+
+            .name { color:white; }
+            .confidence { color:black; }
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .confidence {
+            display: block;
+            font-weight: 300;
+
+            .bestGuess {
+                background: #fff;
+                padding: 2px 6px;
+                color:black;
+                margin-left: 3px;
+            }
+        }
+    }
+}
+
+.upload {
+    background-color: red;
+    color: white;
+    padding: 0.5rem;
+    font-size: smaller;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    position: fixed;
+    left: 1.5%;
+    top: 1%;
+  }
