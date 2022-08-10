@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/food-vision-101-tensorflow-and-reactjs/static/css/main.ac4206b9.css",
+    "main.js": "/food-vision-101-tensorflow-and-reactjs/static/js/main.b7a106f8.js",
+    "static/media/bck.jpg": "/food-vision-101-tensorflow-and-reactjs/static/media/bck.cc124ab95ea849517164.jpg",
+    "static/media/icons-pizza.png": "/food-vision-101-tensorflow-and-reactjs/static/media/icons-pizza.390ec36920b9b2d4193b.png",
+    "index.html": "/food-vision-101-tensorflow-and-reactjs/index.html",
+    "main.ac4206b9.css.map": "/food-vision-101-tensorflow-and-reactjs/static/css/main.ac4206b9.css.map",
+    "main.b7a106f8.js.map": "/food-vision-101-tensorflow-and-reactjs/static/js/main.b7a106f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac4206b9.css",
+    "static/js/main.b7a106f8.js"
+  ]
+}
