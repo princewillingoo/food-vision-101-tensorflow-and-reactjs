@@ -7,15 +7,15 @@ const Footer = () => (
     <a 
       href='https://medium.com/' 
       title='Medium Article'
-      className={'small-button medium'}
-    >
+      className={'small-button medium'}>
       <FontAwesomeIcon icon={faMediumM} size='3x' color='#fff' />
     </a>
+    <div>
+    </div>
     <a 
       href='https://github.com/princewillingoo' 
       title='Github repo'
-      className={'small-button github'}
-    >
+      className={'small-button github'}>
       <FontAwesomeIcon icon={faGithub} size='3x' color='#fff' />
     </a>
   </footer>

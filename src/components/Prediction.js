@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/prediction.scss'
 
-const Prediction = ({ imageURLs, imageRef, results, onChange, fileInputRef, triggerUpload }) => { 
+const Prediction = ({ imageURLs, imageRef, results, onChange, fileInputRef, triggerUpload, inferenceTime }) => { 
 return (
     <div className="App">
         {/* <h1 className='header' >Image Prediction</h1> */}
@@ -15,13 +15,14 @@ return (
             {imageURLs && <img src={imageURLs} alt="Upload Preview" crossOrigin="anonymous" ref={imageRef} />}
         </div>
         <div className="mainContent">
+        {/* <span>{inferenceTime}</span> */}
                 {results.length > 0 && <div className='resultsHolder'>
                     {results.map((result, index) => {
                         return (
                             <React.StrictMode>
-                            <div className='result' key={result.className}>
-                                <span className='name'>{result.className}</span>
-                                <span className='confidence'>Confidence level: {(result.probability * 100).toFixed(2)}% 
+                            <div className='result' key={result.food}>
+                                <span className='name'>{result.food}</span>
+                                <span className='confidence'>Confidence level: {(result.prob).toFixed(2)}% 
                                 {index === 0 && <span className='bestGuess'>Best Guess</span>}</span>
                             </div>
                             </React.StrictMode>

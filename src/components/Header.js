@@ -8,10 +8,13 @@ import logoUrlll from '../img/icons-pizza.png';
 function onPageload() {
   return(
     <div className="eader">
-    <img src={logoUrl} alt="" className="icon"/>
-    <a href="#" className="cen"><h4> Food Vision 101 </h4></a>
-    <img src={logoUrll} alt="" className="iconic"/>
-    <img src={logoUrlll} alt="" className="iconicc"/>
+    
+      <h4> 
+        <img src={logoUrl} alt="" className="icon"/>  
+        <a href="#" className="cen">Food Vision 101</a> 
+        <img src={logoUrll} alt="" className="iconic"/>
+        {/* <img src={logoUrlll} alt="" className="iconicc"/> */}
+      </h4>
   </div>
   )
 }
@@ -19,8 +22,11 @@ function onPageload() {
 function onPrediction() {
   return(
     <div className="eader">
-    <img src={logoUrl} alt="" className="iconicc"/>
-    <a href="#" className="cen"><h5> Image Prediction Results </h5></a>
+    
+      <h5> 
+        <img src={logoUrl} alt="" className="iconicc"/> 
+        <a href="#" className="cen">Image Prediction Results</a> 
+        </h5>
   </div>
   )
 }

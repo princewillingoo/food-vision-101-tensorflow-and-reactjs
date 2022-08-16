@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Food Vision 101 - Computer Vision :hamburger: :camera:
+An end to end multiclass image classification project for 101 classes of food.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+-------------------------------------------------------------------photo---------------------------------------------------------------------------
+![](images/snsh.png)
 
-## Available Scripts
+Deep learning is a vast field with numerous applications. In this project i'd be building an **ended to ended** multi-class image classification system to classify 101 diffrent classes of food type. I'll be implementing the popular **CNN network** while utilizing the full power of **feature extraction**,**fine tuning** and **transfer learning** to extract features and fine-tune layers.
 
-In the project directory, you can run:
+As an introductory project to myself, I worked out with a pretrained Image Classification Model that comes with **TF HUB** and then retrained it on the famous **Food101 Dataset**.
+...more
 
-### `npm start`
+## Aim 
+Apart from building an end to end image classification system, the sole aim of the project is to beat the DeepFood Paper's model which is also trained on the same dataset(Food101).
+### Note 
+The Accuracy of [**DeepFood**](https://arxiv.org/abs/1606.05675) was about **77.4%** and our model's is about **82%**. Difference of **9%** ain't much, but the interesting thing is, DeepFood's model took 2-3 days to train while our's was around 40min.
+> **Dataset :** `Food101`
+> **Model :** `EfficientNetB1`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies used:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Python
+* TensorFlow & Tensorflowjs & TensorFlow Hub
+* Reactjs
+* Streamlit
+* Scikit Learn
+* Pycharm
+* Ipython notebook
 
-### `npm test`
+## Run & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Visit (link) to see the project in action and try it out for your self
 
-### `npm run build`
+### Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run this project, install it locally using npm:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ cd ../FOODVISION
+$ pip install -r requirement.txt
+$ streamlit run app.py
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Illustration
+---some gif video-----
+- ...coming soon
 
-### `npm run eject`
+# Build Up
+### Dataset
+The dataset used for this project is available on tensorflow datasets(tfds) collections. Someone else went through the hard work of cleaning and compiling the image dataset into tensors. so that I didn't have to. The dataset included 101 classes of food with about 1000+ training images of each classes. Although class imbalance did exist in the training data, it did not substantially affect the model performance.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Model Architecture
+![](images/arch.png)
+A EfficientNetB1 model was used as the model for this project. Due to the fact that this model has been so successful in so many image classification competitions in the past and my best EfficientNet model score was good enough for me, I did not explore any other model architectures. The model weights were initially trained on the [ImageNet Dataset](https://en.wikipedia.org/wiki/ImageNet). However, I decide to retrain the whole layers of the model since I had access to a large amount of dataset. This allowed me to train this model and iterate through hyperparameter combinations much more quickly than would have been possible otherwise. I also used my own implementation of [early stopping](https://en.wikipedia.org/wiki/Early_stopping) and [learning rate callback](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau) to prevent overfitting and decrease training time and learning rate. Tensorflow was my weapon of choice as a programming framework because of the ease of use and amount of model customization possible.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Becoming one with the Data : *Visualise - Visualize - Visualize*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Set up
+Setup Global dtype policy to **`mixed_float16`** to implement [**Mixed Precision Training**](https://www.tensorflow.org/guide/mixed_precision)
+Mixed precision is the use of both 16-bit and 32-bit floating-point types in a model during training to make it **run faster** and use **less memory**.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Building the Feature extraction & Model Callbacks 
+As we are dealing with a complex Neural Network (EfficientNetB1) its a good practice to have few callbacks set up. Few ones I will be using throughtout this Notebook are :
 
-## Learn More
+   - **TensorBoard Callback :** TensorBoard provides the visualization and tooling needed for machine learning experimentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - **EarlyStoppingCallback :** Used to stop training when a monitored metric has stopped improving.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   - **ReduceLROnPlateau :** Reduce learning rate when a metric has stopped improving.
 
-### Code Splitting
+Applied transfer learning to build a  [Fine Tuning](https://www.tensorflow.org/tutorials/images/transfer_learning)  Model
+> Again if you want to dive deeper on how the model was trained check out **[`model-training.ipynb`](https://github.com/princewilling/Food_Vision_101/blob/main/modeling.ipynb) Notebook**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Model Results
+* Training accuracy, weighted recall, weighted precision, and weighted F1 scores were all .82
+    * Validation scores were all .82
+    * Holdout test scores were all .82
+* Among all training images, the model had the hardest time classifying apple pie, baby back ribs, bakalava, beef carpaccio, beef tartare
+    * Recall score less than .58 and F1 score less than .66
+    * Most frequently mistook them for other food classes
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](images/visuals/model_f1.png)
+![](images/visuals/pred_visual.png)

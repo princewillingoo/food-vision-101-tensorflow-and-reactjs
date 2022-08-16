@@ -4,6 +4,8 @@
   "homepage": "https://princewilling.github.io/food-vision-101-tensorflow-and-reactjs",
   "private": true,
   "dependencies": {
+    "@tensorflow/tfjs": "^3.19.0",
+    "@tensorflow/tfjs-node": "^3.19.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
