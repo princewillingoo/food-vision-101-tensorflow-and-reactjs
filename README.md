@@ -17,7 +17,7 @@ Apart from building an end to end image classification system, the sole aim of t
 
 ### Note
 
-The Accuracy of [**DeepFood**](https://arxiv.org/abs/1606.05675) was about **77.4%** and our model's is about **82%**. Difference of **9%** ain't much, but the interesting thing is, DeepFood's model took 2-3 days to train while our's was around 40min.
+The Accuracy of [**DeepFood**](https://arxiv.org/abs/1606.05675) was about **77.4%** and our model's is about **85%**. Difference of **8%** ain't much, but the interesting thing is, DeepFood's model took 2-3 days to train while our's was around 40min.
 > **Dataset :** `Food101`
 > **Model :** `EfficientNetB1`
 
