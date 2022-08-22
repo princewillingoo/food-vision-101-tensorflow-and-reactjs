@@ -13,7 +13,7 @@ const Footer = () => (
     <div>
     </div>
     <a 
-      href='https://github.com/princewillingoo' 
+      href='https://github.com/princewilling/food-vision-101-tensorflow-and-reactjs' 
       title='Github repo'
       className={'small-button github'}>
       <FontAwesomeIcon icon={faGithub} size='3x' color='#fff' />

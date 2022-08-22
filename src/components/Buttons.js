@@ -11,7 +11,7 @@ const Buttons = ({ onChange, fileInputRef, triggerUpload}) => {
           <label htmlFor='single'>
             <FontAwesomeIcon icon={faImage} color='#3B5998' size='10x' />
           </label>
-          <input type='file' id='single' onChange={onChange} capture='camera' ref={fileInputRef} onClick={triggerUpload} />
+          <input type='file' id='single' onChange={onChange} accept="image/*" ref={fileInputRef} onClick={triggerUpload} />
           
         </div>
         <h1 className='middle'> Click on icon to Upload Image</h1>
