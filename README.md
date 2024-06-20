@@ -49,7 +49,7 @@ $ npm start
 
 ## Build Up
 
-Visit notebook @ [`modeling.ipynb`](https://github.com/princewillingoo/Food_Vision_101/blob/main/modeling.ipynb)
+Visit notebook @ [`modeling.ipynb`](https://github.com/princewillingoo/food-vision-101-tensorflow-and-reactjs/blob/master/modeling.ipynb)
 
 ### Dataset
 
@@ -77,7 +77,7 @@ As we are dealing with a complex Neural Network (EfficientNetB1) its a good prac
 - **ReduceLROnPlateau :** Reduce learning rate when a metric has stopped improving.
 
 Applied transfer learning to build a  [Fine Tuning](https://www.tensorflow.org/tutorials/images/transfer_learning)  Model
-> Again if you want to dive deeper on how the model was trained, check out **[`modeling.ipynb`](https://github.com/princewillingoo/Food_Vision_101/blob/main/modeling.ipynb) Notebook**
+> Again if you want to dive deeper on how the model was trained, check out **[`modeling.ipynb`](https://github.com/princewillingoo/food-vision-101-tensorflow-and-reactjs/blob/master/modeling.ipynb) Notebook**
 
 #### Model Results
 
